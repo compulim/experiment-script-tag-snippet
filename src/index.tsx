@@ -2,7 +2,17 @@ import { createRoot } from 'react-dom/client';
 
 import App from './ui/App';
 
-const rootElement = document.getElementById('root');
+const { currentScript } = document;
 
-rootElement &&
-  createRoot(rootElement).render(<App site={document.currentScript?.getAttribute('data-site') || undefined} />);
+if (currentScript) {
+  const rootElement = document.getElementById('root');
+  const style = getComputedStyle(currentScript);
+
+  rootElement &&
+    createRoot(rootElement).render(
+      <App
+        fontSize={style.getPropertyValue('--var-font-size')}
+        site={currentScript.getAttribute('data-site') || undefined}
+      />
+    );
+}

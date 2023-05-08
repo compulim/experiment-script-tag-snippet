@@ -2,12 +2,18 @@
 <html lang="en">
   <head>
     <meta content="width=device-width" name="viewport" />
-    <meta content="default-src 'self'" http-equiv="Content-Security-Policy" />
+    <meta content="default-src 'self'; style-src 'self' 'nonce-css-123';" http-equiv="Content-Security-Policy" />
     <title>React web app</title>
     <link href="static/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- Nonce is required for <style> -->
+    <style nonce="css-123" type="text/css">
+      .snippet {
+        --var-font-size: x-large;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <script async data-site="example.com" src="http://localhost:8000/static/js/main.js"></script>
+    <script async class="snippet" data-site="example.com" src="/static/js/main.js"></script>
   </body>
 </html>
