@@ -7,6 +7,13 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="static/js/main.js"></script>
+    <script async data-site="example.com" src="static/js/main.js"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        console.log('index.html');
+      })();
+    </script>
   </body>
 </html>
