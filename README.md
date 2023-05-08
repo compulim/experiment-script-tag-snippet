@@ -2,12 +2,14 @@
 
 Goal: a minimal `<script>` code snippet to load a widget and offers:
 
-- Asynchronous loading
+- Asynchronous and deferred loading
 - Initialization options
-   - Simple options (primitives)
-   - Complex options (CSS or JSON primitive property bag)
+   - Simple options
+      - Via `data-*` attributes
+   - Complex options
+      - Via CSS variables
 - Content Security Policy (CSP)
 
 ```html
-<script async data-var="some-var" src="code-snippet.min.js"></script>
+<script async data-var="some-var" defer src="code-snippet.min.js"></script>
 ```

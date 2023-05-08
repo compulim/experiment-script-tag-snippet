@@ -1,4 +1,9 @@
-const App = ({ fontSize, site }: { fontSize?: string; site?: string }) => {
+type Props = {
+  fontSize?: string;
+  site?: string;
+};
+
+const App = ({ fontSize, site }: Props) => {
   return (
     <main>
       <h1 style={{ fontSize }}>Hello, World from {site}!</h1>
